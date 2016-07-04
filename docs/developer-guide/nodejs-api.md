@@ -110,6 +110,16 @@ The `verify()` method returns an array of objects containing information about t
     fix: {
         range: [1, 15],
         text: ";"
+    },
+    meta: {
+        docs: {
+            description: "disallow unnecessary semicolons",
+            category: "Possible Errors",
+            recommended: true,
+            uri: "http://eslint.org/docs/rules/semi"
+        },
+        fixable: "code",
+        schema: [] // no options
     }
 }
 ```
@@ -127,6 +137,7 @@ The information available for each linting message is:
 * `endColumn` - the end column of the range on which the error occurred (this property is omitted if it's not range).
 * `endLine` - the end line of the range on which the error occurred (this property is omitted if it's not range).
 * `fix` - an object describing the fix for the problem (this property is omitted if no fix is available).
+* `meta` - metadata from the rule definition
 
 **Please note**: the `source` property will be removed from the linting messages in an upcoming breaking release. If you depend on this property, you can still use the `getSourceCode` method described below to get the line of code for each message.
 
